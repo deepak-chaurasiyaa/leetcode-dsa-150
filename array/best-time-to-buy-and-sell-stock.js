@@ -14,11 +14,11 @@
  * @return {number}
  */
 var maxProfit = function (prices) {
+	let minPriceSoFar = prices[0];
 	let maxProfit = 0;
-	let minSoFar = prices[0];
 	for (let i = 0; i < prices.length; i++) {
-		minSoFar = Math.min(minSoFar, prices[i]);
-		let profit = prices[i] - minSoFar;
+		minPriceSoFar = Math.min(minPriceSoFar, prices[i]);
+		let profit = prices[i] - minPriceSoFar;
 		maxProfit = Math.max(maxProfit, profit);
 	}
 	return maxProfit;
